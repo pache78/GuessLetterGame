@@ -1,14 +1,81 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Psychic Game</title>
-	<script src="game.js"></script>
-</head>
-<body>
+<html lang="en">
+	<head>
+		<title></title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+		<style>
+			.mar-top-10-per{margin-top:10%;}
+			.answer{padding:10px 10px; text-align:center;}		
+			.bold-text{font-weight:bold;}
+		</style>
+	</head>
+	<body>
+	
+	<div class="container">
+		<div class="row mar-top-10-per">
+			<div class="col-md-8 col-md-offset-2">
+				<center><h3>Guess the Letter</h3></center>
+				<div class="well">
+					<div class="panel">
+						<div class="panel-body">
+							<table class="table table-striped">
+								<tbody>
+									<tr>
+										<td>Wins:</td>
+										<td><strong id="numWins"></strong></td>
+									</tr>
+									<tr>
+										<td>Losses:</td>
+										<td><strong id="numLosses"></strong></td>
+									</tr>
+									<tr>
+										<td>Guess So Far:</td>
+										<td><strong id="numGuesses"></strong></td>
+									</tr>
+									
+									<tr>
+										<td>Guess Left:</td>
+										<td><strong id="numGuessLeft"></strong></td>
+									</tr>
+								</tbody>
+							</table>	
+							
+							<div id="results" class="row hidden">
+								<div class="col-xs-6 col-xs-offset-3">
+									<div class="col-xs-6">
+										<center id="randomLetter" class="bold-text alert alert-info"></center>
+									</div>
+									
+									<div class="col-xs-6">
+										<center id="userAnswer" class="bold-text"></center>										
+											<h5><center id="answerStatus"></center></h5>										
+									</div>									
+								</div>								
+							</div>
+							<div id="gameOver" class="alert alert-warning hidden">
+								<h4><i class="glyphicon glyphicon-warning-sign"></i> GAME OVER</h4>
+							</div>
+						</div>
+						<div class="panel-footer center-block">
+							<center>
+								<button id="btnReset" class="btn btn-default">Reset</button>
+								<button id="btnPlayAgain" class="btn btn-warning">Play Again</button>
+								<label for="txtUserAnswer"><small>Enter Answer:</small></label>
+								<input type="text" id="txtUserAnswer" size="2" name="txtUserAnswer"
+									onkeypress="return lettersOnly();"/>
+								<button id="btnAnswer" class="btn btn-primary" type="submit">Answer</button>
+							</center>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
 
-	
-	
-
-	
-</body>
+		
+		<script src="game.js"></script>
+	</body>
 </html>
